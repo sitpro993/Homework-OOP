@@ -5,9 +5,7 @@ public class SystemOfFirstDegreeEquations {
     private double a21;
     private double a22;
     private double b2;
-    private double d;
-    private double d1;
-    private double d2;
+  
 
 
     public SystemOfFirstDegreeEquations(double a11, double a12, double b1, double a21, double a22, double b2){
@@ -67,9 +65,9 @@ public class SystemOfFirstDegreeEquations {
         this.b2 = b2;
     }
     public String resolve(){
-        d = getA11() * getA22() - getA21() * getA12();
-        d1 = getB1() * getA22() - getB2() * getA12();
-        d2 = getA11() * getB2() - getA21() * getB1();
+       double d = getA11() * getA22() - getA21() * getA12();
+       double d1 = getB1() * getA22() - getB2() * getA12();
+       double d2 = getA11() * getB2() - getA21() * getB1();
         if (d == 0)
             if (d1 == 0 && d2 == 0)
                 return "The system has infinitely many solutions.";
