@@ -5,6 +5,39 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
 
+    public DigitalVideoDisc(){
+
+    }
+
+    public DigitalVideoDisc(String title){
+        this.title = title;
+    }
+
+    public DigitalVideoDisc(String category, String title, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+
+    public DigitalVideoDisc(String director, String category, String title, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.cost = cost;
+    }
+
+
+    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.length = length;
+        this.cost = cost;
+    }
+
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         super();
         this.title = title;
