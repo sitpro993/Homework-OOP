@@ -10,25 +10,25 @@ public class NumberOfDaysPerMonth {
         this.y = y;
     }
 
-//    public int getM() {
-//        return this.m;
-//    }
-//
-//    public void setM(int m) {
-//        this.m = m;
-//    }
-//
-//    public double getY() {
-//        return this.y;
-//    }
-//
-//    public void setY(int y) {
-//        this.y = y;
-//    }
+    public int getM() {
+        return this.m;
+    }
 
-//    public boolean check_month(int m){
-//        return 0 < m && m < 13;
-//    }
+    public void setM(int m) {
+        this.m = m;
+    }
+
+    public double getY() {
+        return this.y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public boolean check_month(int m){
+        return 0 < m && m < 13;
+    }
     public boolean check_year(int y){
         return 1900 <= y && y <= 9999;
     }
