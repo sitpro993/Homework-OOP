@@ -141,7 +141,7 @@ public class Order {
                     itemsOrdered[j]=itemsOrdered[j + 1];
                 }
                 dem--;
-                System.out.println("Đã xóa phần tử khỏi danh sách");
+                System.out.println("The disc was deleted from the order");
             }
         }
     }

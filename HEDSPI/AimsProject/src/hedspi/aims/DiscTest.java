@@ -35,20 +35,26 @@ public class DiscTest {
             System.out.println("5. Exit.");
             System.out.print("Your choose: ");
             select=sc.nextInt();
+            sc.nextLine();
             switch(select) {
                 case 1:
                     order.show();
                     break;
                 case 2:
-                    DigitalVideoDisc d1 = new DigitalVideoDisc("HARRY love  Potter", "Animation", "Roger Allers", 11, 77.95f);
-                    System.out.println(d1.search("Harry Potter"));
-                    DigitalVideoDisc d2 = new DigitalVideoDisc("HARRY Potter", "Animation", "Roger Allers", 11, 77.95f);
-                    System.out.println(d2.search("Harry Potter"));
-                    DigitalVideoDisc d3 = new DigitalVideoDisc("HARRY sjydkhao", "Animation", "Roger Allers", 11, 77.95f);
-                    System.out.println(d3.search("Harry Potter"));
+                    DigitalVideoDisc itemsOrdered[] = order.getDvdList();
+                    int count = 0;
+                    System.out.print("Title: ");
+                    String td = sc.nextLine();
+                    System.out.println("Search" +td + " : ");
+                    for(int i = 0; i < itemsOrdered.length ; i++){
+                        if(itemsOrdered[i].search(td) == true){
+                            System.out.println(itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + " - " + itemsOrdered[i].getDirector() + " - " + itemsOrdered[i].getLength() + " - " + itemsOrdered[i].getCost());
+                            count++;
+                        }
+                    }
+                    if(count == 0) System.out.println("No result " + td);
                     break;
                 case 3:
-                    DigitalVideoDisc itemsOrdered[] = order.getDvdList();
                     System.out.println("Lucky number is:");
                     order.random();
                     System.out.println(order.getALuckyItem().getTitle() + " - " + order.getALuckyItem().getCategory() + " - " + order.getALuckyItem().getDirector() + " - " + order.getALuckyItem().getLength() + " - " + order.getALuckyItem().getCost());
