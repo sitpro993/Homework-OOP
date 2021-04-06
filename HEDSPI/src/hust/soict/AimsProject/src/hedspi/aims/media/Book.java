@@ -15,24 +15,33 @@ public class Book extends Media {
     }
 
     public Book(String title){
-        super(title);
+        setTitle(title);
     }
 
     public Book(String title, String category){
-        super(title, category);
+        setTitle(title);
+        setCategory(category);
     }
 
     public Book(String title, String category, float cost){
-        super(title, category, cost);
+        setCategory(title);
+        setTitle(title);
+        setCost(cost);
     }
 
     public Book(int id, String title, String category, float cost){
-        super(id,title, category, cost);
+        setCategory(title);
+        setTitle(title);
+        setCost(cost);
+        setId(id);
     }
 
 
     public Book(int id, String title, String category, float cost, List<String> authors){
-        super(id, title, category, cost);
+        setId(id);
+        setCategory(title);
+        setTitle(title);
+        setCost(cost);
         this.authors = authors;
     }
 

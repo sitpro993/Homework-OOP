@@ -38,27 +38,7 @@ public abstract class Media {
         this.id = id;
     }
 
-    protected Media(String title){
-        this.title = title;
-    }
 
-    protected Media(String title, String category){
-        this.title = title;
-        this.category = category;
-    }
-
-    protected Media(String title, String category, float cost){
-        this.title = title;
-        this.category = category;
-        this.cost =cost;
-    }
-
-    protected Media(int id, String title, String category, float cost){
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost =cost;
-    }
 
     public boolean search(String title){
         int count = 0;

@@ -33,13 +33,13 @@ public class Order {
     public void verifyOrderedItem() {
         int dem = itemsOrdered.size();
         if (dem < MAX_NUMBERS_ORDERED_ITEMS - 1 ) {
-            System.out.println("Added Order");
+            System.out.println("Đã được thêm vào Order");
         }
         if (dem == MAX_NUMBERS_ORDERED_ITEMS - 1 ) {
-            System.out.println("Added Order,Order is full");
+            System.out.println("Đã được thêm vào Order,Order đã đầy");
         }
         if (dem > MAX_NUMBERS_ORDERED_ITEMS - 1 ) {
-            System.out.println("full, cannot add");
+            System.out.println("Đã đầy, không thể thêm");
         }
     }
 
@@ -55,14 +55,35 @@ public class Order {
     }
 
     public void addItem(ArrayList<Media> items ){
-        for (Media item : items) addItem(item);
+        for (Media item : items) {
+            addItem(item);
+        }
     }
 
-    public void removeItem(ArrayList<Media> item ){
+    public void addItemById(int id,ArrayList<Media> items ){
+        int count = 0;
+        for (Media item : items) {
+            if (item.getId() == id) {
+                verifyOrderedItem();
+                if (itemsOrdered.size() < MAX_NUMBERS_ORDERED_ITEMS) {
+                    itemsOrdered.add(item);
+                }
+                count++;
+                break;
+            }
+        }
+        if(count == 0) System.out.println("Does not exist");
+    }
+
+    public void removeItem(Media item ){
         if(itemsOrdered.contains(item)){
             itemsOrdered.remove(item);
             System.out.println("removed from the list");
         } else System.out.println("Does not exist");
+    }
+
+    public void removeItem(ArrayList<Media> items ){
+        items.clear();
     }
 
     public void removeItemById(int id){
@@ -83,7 +104,7 @@ public class Order {
     public void show() {
         System.out.println("------------------------------------");
         for (int i = 0; i < itemsOrdered.size(); i++) {
-            System.out.println(i + 1 + ". " + itemsOrdered.get(i).showInfo());
+            System.out.println(i + 1 + "." + itemsOrdered.get(i).showInfo());
         }
         System.out.println("------------------------------------");
         System.out.println("Total cost: " + totalCost());
@@ -101,9 +122,7 @@ public class Order {
 
     public void randomLuckyItem() {
         int range = 10;
-        int max = 10;
-        int min = itemsOrdered.size();
         this.luckyItem = (int) (Math.random() * range);
-        if(luckyItem >= itemsOrdered.size()) luckyItem -= (max - min);
+        if(luckyItem >= itemsOrdered.size()) this.luckyItem = itemsOrdered.size() - 1;
     }
 }
