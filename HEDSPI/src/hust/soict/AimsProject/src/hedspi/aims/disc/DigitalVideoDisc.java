@@ -2,39 +2,27 @@ package hedspi.aims.disc;
 
 import hedspi.aims.media.Media;
 
-public class DigitalVideoDisc extends Media {
-    private final String director;
-    private final int length;
+public class DigitalVideoDisc extends Disc implements Playable{
 
 
-    public String getDirector() {
-        return director;
+    public DigitalVideoDisc(String title) {
+        super(title);
     }
 
-    public int getLength() {
-        return length;
+    public DigitalVideoDisc(String title, String category){
+        super(title,category);
     }
 
-    public DigitalVideoDisc(String title, String director, int length) {
-       setTitle(title);
-        this.director = director;
-        this.length = length;
+    public DigitalVideoDisc(String title, String category, float cost){
+        super(title,category, cost);
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length) {
-        setTitle(title);
-        setCategory(category);
-        this.director = director;
-        this.length = length;
+    public DigitalVideoDisc(int id, String title, String category, float cost){
+        super(id, title, category, cost);
     }
 
-    public DigitalVideoDisc(int id,String title, String category, String director, int length ,float cost) {
-        setTitle(title);
-        setCategory(category);
-        setId(id);
-        setCost(cost);
-        this.director = director;
-        this.length = length;
+    public DigitalVideoDisc(int id,String title, String category, String director, float length ,float cost) {
+        super(id, title, category, director, length, cost);
     }
 
 
@@ -42,5 +30,11 @@ public class DigitalVideoDisc extends Media {
     @Override
     public String showInfo() {
         return "DVD  . ID: " + getId() + " - Title: " + getTitle() + ", Category: " + getCategory() + ", Director: " + getDirector() + ", Length: " + getLength() + ", Price: "+ getCost();
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
 }

@@ -51,3 +51,43 @@ public class TestPassingParameter {
 
 
 }
+
+
+//    int id_cd;
+//                                while (true){
+//                                        System.out.print("ID: ");
+//                                        id_cd = sc.nextInt();
+//                                        sc.nextLine();
+//                                        if (check(items, id_cd)) break;
+//                                        else System.out.println("ID already exist");
+//                                        }
+//                                        String title_cd;
+//                                        while (true){
+//                                        System.out.print("Title: ");
+//                                        title_cd = sc.nextLine();
+//                                        if (check(items, title_cd)) break;
+//                                        else System.out.println("Title already exist");
+//                                        }
+//                                        System.out.print("Category: ");
+//                                        String category_cd = sc.nextLine();
+//                                        System.out.print("Director: ");
+//                                        String director_cd = sc.nextLine();
+//                                        System.out.print("Length: ");
+//                                        float length_cd = sc.nextFloat();
+//                                        sc.nextLine();
+//                                        System.out.print("Cost: ");
+//                                        float cost_cd = sc.nextFloat();
+//                                        sc.nextLine();
+//                                        System.out.print("Artist: ");
+//                                        String artist = sc.nextLine();
+//                                        CompactDisc cd = new CompactDisc(id_cd,title_cd,category_cd,director_cd,length_cd, cost_cd,artist);
+//                                        System.out.print("How many tracks do you want to add: ");
+//                                        int it = sc.nextInt();
+//                                        sc.nextLine();
+//                                        int Id;
+//                                        do {
+//                                        System.out.print("enter the id code: ");
+//                                        Id = sc.nextInt();
+//                                        cd.addTrackById(Id,tracks);
+//                                        }
+//                                        while (tracks.size() != it);
